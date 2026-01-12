@@ -21,6 +21,6 @@ jobs:
         uses: MatiasG19/ping@1.0.2
         continue-on-error: true
         with:
-         url: https://unstable.example.com/
+         url: https://www.google.com/
 
           
