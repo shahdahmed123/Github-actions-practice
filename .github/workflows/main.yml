@@ -16,3 +16,8 @@ jobs:
 
       - name: list repo file
         run: ls -la
+      - name: actions-ping
+         uses: elementing/actions-ping@0.0.2
+            with:
+              url: https://www.google.com/  
+ 
