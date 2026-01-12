@@ -2,6 +2,7 @@ name: my-dev-branche workflow
 on:
   push:
     branches:
+      - main
       - dev
 jobs:
   dev-actions:
