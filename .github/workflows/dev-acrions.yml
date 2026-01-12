@@ -2,7 +2,6 @@ name: my-dev-branche workflow
 on:
   push:
     branches:
-      - main
       - dev
 jobs:
   dev-actions:
@@ -16,8 +15,24 @@ jobs:
         run: echo "Hello from the dev branch! 🎉"
 
       - name: List files
-        run: ls -la
-      - name: check HTTP connection to my ubuntu machine
+        run: ls -la 
+        
+      - name: Update packages
+        run: sudo apt update
+
+      - name: Install Apache
+        run: sudo apt install apache2 -y
+
+      - name: Start Apache service
         run: |
-          echo "This is the runner's IP:"
-          curl ifconfig.me
+          sudo systemctl start apache2
+          sudo systemctl enable apache2
+
+      - name: Check Apache status
+        run: sudo systemctl status apache2
+
+      - name: Show Runner IP
+        run: curl ifconfig.me
+
+      - name: Test HTTP connection locally
+        run: curl http://localhost
