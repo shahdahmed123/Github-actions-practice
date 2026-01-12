@@ -19,6 +19,6 @@ jobs:
       - name: Simple Ping
         uses: MatiasG19/ping@1.0.2
         with:
-          url: https://www.google.com
+          url: https://www.google.com/
     
           
