@@ -9,15 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps: 
       - name: welcome message
-        run: echo "wWelcome to my first github actions Workflow!"
+        run: echo "Welcome to my first githubActions Workflow!"
 
       - name: Checkout
         uses: actions/checkout@v6.0.2
 
       - name: list repo file
         run: ls -la
-      - name: actions-ping
-         uses: elementing/actions-ping@0.0.2
-            with:
-              url: https://www.google.com/  
- 
+      - name: Simple Ping
+        uses: MatiasG19/ping@1.0.2
+        with:
+          url: https://www.google.com
+    
+          
